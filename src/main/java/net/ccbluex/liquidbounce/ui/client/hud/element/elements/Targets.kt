@@ -928,8 +928,8 @@ open class Targets : Element(-46.0, -40.0, 1F, Side(Side.Horizontal.MIDDLE, Side
 
 
         //hp bar
-        RenderUtils.drawRoundedCornerRect(44f, 32f, 44f + additionalWidth, 38f, 2.5f, Color(60, 60, 60, 200).rgb)
-        RenderUtils.drawRoundedCornerRect(44f, 32f, 44f + (easingHP / target.maxHealth) * additionalWidth, 38f, 2.5f, Color(180, 180, 180, 200).rgb)
+        RenderUtils.drawRoundedCornerRect(44f, 33f, 44f + additionalWidth, 38f, 2.5f, Color(60, 60, 60, 200).rgb)
+        RenderUtils.drawRoundedCornerRect(44f, 33f, 44f + (easingHP / target.maxHealth) * additionalWidth, 38f, 2.5f, Color(180, 180, 180, 200).rgb)
     }
 
     private fun drawChill(entity: EntityLivingBase) {
