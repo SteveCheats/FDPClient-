@@ -860,8 +860,8 @@ open class Targets : Element(-46.0, -40.0, 1F, Side(Side.Horizontal.MIDDLE, Side
         //background is halal
 
         //curved sides
-        RenderUtils.drawRoundedCornerRect(0f, 0f, 12f, 45f, 3f, ColorUtils.hslRainbow(6, indexOffset = 10).rgb)
-        RenderUtils.drawRoundedCornerRect(120f, 0f, 128f, 45f, 3f, ColorUtils.hslRainbow(129, indexOffset = 10).rgb)
+        RenderUtils.drawRoundedCornerRect(0f, 5f, 12f, 45f, 6f, ColorUtils.hslRainbow(6, indexOffset = 10).rgb)
+        RenderUtils.drawRoundedCornerRect(120f, 5f, 128f, 45f, 6f, ColorUtils.hslRainbow(129, indexOffset = 10).rgb)
 
         //rain bowwww
 
@@ -878,7 +878,7 @@ open class Targets : Element(-46.0, -40.0, 1F, Side(Side.Horizontal.MIDDLE, Side
         //draw
         for (i in 6..stopPos step 5) {
             val x1 = (i + 5).coerceAtMost(stopPos).toDouble()
-            RenderUtils.quickDrawGradientSidewaysH(i.toDouble(), 0.0, x1, 45.0,
+            RenderUtils.quickDrawGradientSidewaysH(i.toDouble(), 5.0, x1, 45.0,
                 ColorUtils.hslRainbow(i, indexOffset = 10).rgb, ColorUtils.hslRainbow(x1.toInt(), indexOffset = 10).rgb)
         }
 
@@ -923,13 +923,13 @@ open class Targets : Element(-46.0, -40.0, 1F, Side(Side.Horizontal.MIDDLE, Side
         font.drawCenteredString(target.name, 45 + (additionalWidth / 2f), 5f, Color.WHITE.rgb, false)
         val infoStr = ((((easingHP / target.maxHealth) * 100).roundToInt()).toString() + " - " + ((mc.thePlayer.getDistanceToEntityBox(target)).roundToInt()).toString() + "M")
 
-        font.drawString(infoStr, 40f + ((additionalWidth - font.getStringWidth(infoStr)) / 2f), 10f - font.FONT_HEIGHT, Color.WHITE.rgb, false)
+        font.drawString(infoStr, 40f + ((additionalWidth - font.getStringWidth(infoStr)) / 2f), 10f + font.FONT_HEIGHT, Color.WHITE.rgb, false)
 
 
 
         //hp bar
-        RenderUtils.drawRoundedCornerRect(44f, 33f, 44f + additionalWidth, 38f, 2.5f, Color(60, 60, 60, 200).rgb)
-        RenderUtils.drawRoundedCornerRect(44f, 33f, 44f + (easingHP / target.maxHealth) * additionalWidth, 38f, 2.5f, Color(180, 180, 180, 200).rgb)
+        RenderUtils.drawRoundedCornerRect(44f, 30f, 44f + additionalWidth, 38f, 2.5f, Color(60, 60, 60, 200).rgb)
+        RenderUtils.drawRoundedCornerRect(44f, 30f, 44f + (easingHP / target.maxHealth) * additionalWidth, 38f, 2.5f, Color(180, 180, 180, 200).rgb)
     }
 
     private fun drawChill(entity: EntityLivingBase) {
