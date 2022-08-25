@@ -920,16 +920,16 @@ open class Targets : Element(-46.0, -40.0, 1F, Side(Side.Horizontal.MIDDLE, Side
 
 
         // info text
-        font.drawCenteredString(target.name, 45 + (additionalWidth / 2f), 5f + font.FONT_HEIGHT, Color.WHITE.rgb, false)
+        font.drawCenteredString(target.name, 45 + (additionalWidth / 2f), 1f + font.FONT_HEIGHT, Color.WHITE.rgb, false)
         val infoStr = ((((easingHP / target.maxHealth) * 100).roundToInt()).toString() + " - " + ((mc.thePlayer.getDistanceToEntityBox(target)).roundToInt()).toString() + "M")
 
-        font.drawString(infoStr, 40f + ((additionalWidth - font.getStringWidth(infoStr)) / 2f), 10f + font.FONT_HEIGHT + font.FONT_HEIGHT, Color.WHITE.rgb, false)
+        font.drawString(infoStr, 45f + ((additionalWidth - font.getStringWidth(infoStr)) / 2f), font.FONT_HEIGHT + font.FONT_HEIGHT, Color.WHITE.rgb, false)
 
 
 
         //hp bar
         RenderUtils.drawRoundedCornerRect(44f, 32f, 44f + additionalWidth, 38f, 2.5f, Color(60, 60, 60, 200).rgb)
-        RenderUtils.drawRoundedCornerRect(44f, 32f, 44f + (easingHP / target.maxHealth) * additionalWidth, 38f, 2.5f, Color(180, 180, 180, 200).rgb)
+        RenderUtils.drawRoundedCornerRect(44f, 32f, 44f + (getHealth(target) / target.maxHealth) * additionalWidth, 38f, 2.5f, Color(180, 180, 180, 200).rgb)
     }
 
     private fun drawChill(entity: EntityLivingBase) {
@@ -1334,7 +1334,7 @@ open class Targets : Element(-46.0, -40.0, 1F, Side(Side.Horizontal.MIDDLE, Side
             "zamorozka" -> Border(0F, 0F, 150F, 55F)
             "arris" -> Border(0F, 0F, 120F, 40F)
             "tenacity" -> Border(0F, 0F, 120F, 40F)
-            "tenacitynew" -> Border(0F, 0F, 120F, 40F)
+            "tenacitynew" -> Border(0F, 5F, 125F, 45F)
             "chill" -> Border(0F, 0F, 120F, 48F)
             "remix" -> Border(0F, 0F, 146F, 49F)
             "rice" -> Border(0F, 0F, 135F, 55F)
